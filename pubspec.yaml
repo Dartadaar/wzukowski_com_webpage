@@ -77,9 +77,9 @@ flutter:
   fonts:
    - family: Gopher
      fonts:
-       - asset: fonts/Gopher-Regular.ttf
+       - asset: assets/fonts/Gopher-Regular.ttf
          weight: 500
-       - asset: fonts/Gopher-Medium.ttf
+       - asset: assets/fonts/Gopher-Medium.ttf
          weight: 600
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
