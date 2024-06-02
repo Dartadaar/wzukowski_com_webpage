@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:marquee/marquee.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/size.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
@@ -23,7 +24,7 @@ class _HomepageState extends State<Homepage> {
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: CustomColor.blackPrimary,
+          backgroundColor: Colors.transparent,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null: const DrawerMobile(),
           body: ListView(
             scrollDirection: Axis.vertical,
@@ -39,8 +40,14 @@ class _HomepageState extends State<Homepage> {
               ),
               //SCROLLING BACKGROUND
               Container(
-                height: 60,
-                margin: EdgeInsets.symmetric(vertical: 10,horizontal: 20.0,),
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/images/background.jpg"),
+                    fit: BoxFit.cover,
+                  )
+                ),
+                height: constraints.maxHeight,
+                margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20.0,),
                 width: double.maxFinite,
               ),
               // SELECTED WORKS
