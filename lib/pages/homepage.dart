@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:marquee/marquee.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/size.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
-import 'package:wzukowski_com/constants/nav_items.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
-import 'package:wzukowski_com/widgets/site_logo.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -47,7 +44,7 @@ class _HomepageState extends State<Homepage> {
                   )
                 ),
                 height: constraints.maxHeight,
-                margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20.0,),
+                //margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20.0,),
                 width: double.maxFinite,
               ),
               // SELECTED WORKS
