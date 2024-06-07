@@ -5,6 +5,7 @@ import 'package:wzukowski_com/constants/size.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
+import 'package:marquee/marquee.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -46,6 +47,11 @@ class _HomepageState extends State<Homepage> {
                 height: constraints.maxHeight,
                 //margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20.0,),
                 width: double.maxFinite,
+              ),
+              Container(
+                child: Marquee(
+  text: 'There once was a boy who told this story about a boy: "',
+),
               ),
               // SELECTED WORKS
               Container(
