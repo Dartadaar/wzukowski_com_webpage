@@ -1,3 +1,4 @@
+import 'package:easy_web_view/easy_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:wzukowski_com/constants/colors.dart';
@@ -23,7 +24,7 @@ class _HomepageState extends State<Homepage> {
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: Colors.transparent,
+          backgroundColor: Colors.black,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null: const DrawerMobile(),
           body: ListView(
             scrollDirection: Axis.vertical,
@@ -106,10 +107,11 @@ class _HomepageState extends State<Homepage> {
                                         padding: const EdgeInsets.only(top: 20, bottom: 40),
                                         child: Row(
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Text('${worksList[ii][0]} for ${worksList[ii][1]}'),
+                                            Expanded( child: Text('${worksList[ii][0]} for ${worksList[ii][1]}', maxLines: 4, overflow: TextOverflow.ellipsis, textDirection: TextDirection.rtl, textAlign: TextAlign.left)),
                                             // ignore: unnecessary_null_comparison
-                                            Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}')
+                                            Container(padding: EdgeInsets.only(left: 20),child: Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}'))
                                           ]
                                          ),
                                       ),
@@ -128,11 +130,16 @@ class _HomepageState extends State<Homepage> {
                   ],
                 )
               ),
+              Divider(thickness: 5),
                // ŻukowskiMularski
               Container(
                 color: CustomColor.blackPrimary,
                 height: 500,
                 width: double.maxFinite,
+                child: EasyWebView(
+                      src: 'https://www.youtube.com/embed/q0OqUIQzKWw?si=a6GWb6Tvdordoyw7',
+                      width: constraints.maxWidth/3,
+                    )
               ),
               // installation
               Container(
