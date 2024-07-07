@@ -10,7 +10,7 @@ class HeaderDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
             height: 60,
-            margin: const EdgeInsets.symmetric(vertical: 10,horizontal: 20.0,),
+            margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20.0),
             width: double.maxFinite,
             child: Row(
               children: [
