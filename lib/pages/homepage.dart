@@ -6,6 +6,7 @@ import 'package:wzukowski_com/constants/works.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
+import 'package:wzukowski_com/widgets/separatorline.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -66,30 +67,70 @@ class _HomepageState extends State<Homepage> {
                 color: CustomColor.yellowPrimary,
               ),
               // LIST OF WORKS
+              //uwaga z paddingami oblicza polowe ekranu
               Container(
-                height: 500,
                 width: double.maxFinite,
-                padding: EdgeInsets.all(30),
                 color: CustomColor.blackPrimary,
                 child: 
                 Column(
                   children: [
-                    for(int i=0; i<workTypes.length; i++)
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    for(int i=0; i<workTypes.length; i++) //pętla rodzajów
+                    Column(
                       children: [
-                        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Container(color: Colors.green, child: Text(workTypes[i]),)]),
-                        Spacer(),
-                        Column(crossAxisAlignment: CrossAxisAlignment.end, children: [Row(children: [Text('utwór'), Text('rok')])])
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.all(10),
+                                  color: Colors.green,
+                                  width: constraints.maxWidth/2,
+                                  child: Text(workTypes[i]),
+                                )
+                              ]
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end, children:[
+                                for (int ii=0;ii<worksList.length;ii++)
+                                if (worksList[ii][3]==i)
+                                Container(
+                                  width: constraints.maxWidth/2,
+                                  padding: const EdgeInsets.all(10),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.only(top: 20, bottom: 40),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text('${worksList[ii][0]} for ${worksList[ii][1]}'),
+                                            // ignore: unnecessary_null_comparison
+                                            Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}')
+                                          ]
+                                         ),
+                                      ),
+                                       Divider(color: CustomColor.whitePrimary, height: 0,)
+                                    ],
+                                  ),
+                                )
+                                ]
+                            ),
+                          ]
+                        ),
+                        if (i<workTypes.length-1)
+                        SeparatorLine()
                       ],
                     ),
-                    Divider(),
                   ],
                 )
               ),
                // ŻukowskiMularski
               Container(
+                color: CustomColor.blackPrimary,
                 height: 500,
                 width: double.maxFinite,
               ),
