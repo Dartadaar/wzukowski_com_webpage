@@ -1,4 +1,4 @@
-var works_list = [
+var worksList = [
   ["Cool black / Bellflower color (Kikyō-iro)", "small ensemble (picc, cl, perc, pf, vn, va, vc)", 2024, 0],
   ["offset", "any melodic instrument/combination of instruments", 2023, 0],
   ["Pyramid texts 436", "5 voices and small ensemble", 2023, 0, "https://www.youtube.com/watch?v=9uDACnbZRQs"],
@@ -17,7 +17,7 @@ var works_list = [
   ["luna", "", 2022, 2, "https://recordu.lnk.to/4W88xn"]
 ];
 
-var work_types = ["acoustic works", "electroacoustic works", "acousmatic works"];
+var workTypes = ["acoustic works", "electroacoustic works", "acousmatic works"];
 
 //1-acoustic, 2-electroacustic, 3-acousmatic
 //[title, year, type, /link/]

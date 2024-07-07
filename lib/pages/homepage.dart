@@ -68,31 +68,23 @@ class _HomepageState extends State<Homepage> {
               // LIST OF WORKS
               Container(
                 height: 500,
-                padding: EdgeInsets.all(20),
+                width: double.maxFinite,
+                padding: EdgeInsets.all(30),
                 color: CustomColor.blackPrimary,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
+                child: 
+                Column(
                   children: [
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                    for(int i=0; i<workTypes.length; i++)
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        for(int i=0;i<work_types.length;i++)
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisSize: MainAxisSize.min, children: [Text(work_types[i])],),
-                            //Spacer(),
-                            Column(crossAxisAlignment: CrossAxisAlignment.end, mainAxisSize: MainAxisSize.min, children: [
-                              for (int ii=0;ii<works_list.length;ii++)
-                              if (works_list[ii][3]==i) Text(works_list[ii][0] as String)
-                            ],)
-                          ]
-                        )
+                        Column(crossAxisAlignment: CrossAxisAlignment.start, children: [Container(color: Colors.green, child: Text(workTypes[i]),)]),
+                        Spacer(),
+                        Column(crossAxisAlignment: CrossAxisAlignment.end, children: [Row(children: [Text('utwór'), Text('rok')])])
                       ],
                     ),
+                    Divider(),
                   ],
                 )
               ),
