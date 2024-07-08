@@ -1,14 +1,13 @@
 import 'package:easy_web_view/easy_web_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/size.dart';
 import 'package:wzukowski_com/constants/works.dart';
+import 'package:wzukowski_com/widgets/custom_text_field.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
 import 'package:wzukowski_com/widgets/separatorline.dart';
-import 'package:marvelous_carousel/marvelous_carousel.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -157,8 +156,25 @@ class _HomepageState extends State<Homepage> {
               //),
               // CONTACT
               Container(
-                height: 500,
                 width: double.maxFinite,
+                color: CustomColor.blackPrimary,
+                child: const Column(
+                  children: [
+                    Text('Get in Touch',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24)
+                    ),
+                    SizedBox(height: 50,),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: CustomTextField()
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
               // FOOTER
               Container(

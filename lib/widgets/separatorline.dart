@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 
 class SeparatorLine extends StatelessWidget {
+  const SeparatorLine({super.key});
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
