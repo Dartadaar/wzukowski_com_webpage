@@ -2,12 +2,15 @@ import 'package:easy_web_view/easy_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/size.dart';
+import 'package:wzukowski_com/constants/sns_links.dart';
 import 'package:wzukowski_com/constants/works.dart';
 import 'package:wzukowski_com/widgets/custom_text_field.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
 import 'package:wzukowski_com/widgets/separatorline.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -149,37 +152,75 @@ class _HomepageState extends State<Homepage> {
                 )
               ),
               const Divider(thickness: 5),
-              // installation
-              //Container(
-              //  height: 500,
-              //  width: double.maxFinite,
-              //),
-              // CONTACT
               Container(
-                width: double.maxFinite,
                 color: CustomColor.blackPrimary,
-                child: const Column(
+                width: double.maxFinite,
+                height: 800,
+                child: Row(
                   children: [
-                    Text('Get in Touch',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24)
+                    Container(
+                      width: constraints.maxWidth/2,
+                      decoration: const BoxDecoration(
+                       image: DecorationImage(image: AssetImage('assets/images/profile.jpg'),
+                        fit: BoxFit.cover
+                        ),
+                      ),
                     ),
-                    SizedBox(height: 50,),
-                    Row(
-                      children: [
-                        Flexible(
-                          child: CustomTextField()
-                        )
-                      ],
+                    Container(
+                      width: constraints.maxWidth/2,
+                      padding: const EdgeInsets.all(50),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 80),
+                            child: Text('Get in Touch'),
+                          ),
+                          Text('Name'),
+                          CustomTextField(),
+                          Text('Email'),
+                          CustomTextField(),
+                          Text('Message'),
+                          CustomTextField(maxLines: 5),
+                          SizedBox(width: 140, height: 45, child: ElevatedButton(onPressed: (){}, child: Text('send')))
+                        ],
+                      ),
                     )
                   ],
                 ),
               ),
               // FOOTER
               Container(
-                height: 500,
+                color: CustomColor.blackPrimary,
+                height: 100 ,
                 width: double.maxFinite,
+                child: Wrap(
+                  spacing: 12,
+                  runSpacing: 12,
+                  alignment: WrapAlignment.start,
+                  children: [
+                    InkWell(
+                        onTap: () {
+                          js.context.callMethod('open', [SnsLinks.instagram]);
+                        },
+                        child: Image.asset('images/instagram.png', width: 28,)),
+                    InkWell(
+                        onTap: () {
+                          js.context.callMethod('open', [SnsLinks.youtube]);
+                        },
+                        child: Image.asset('images/youtube.png', width: 28)),
+                    InkWell(
+                        onTap: () {
+                          js.context.callMethod('open', [SnsLinks.soundcloud]);
+                        },
+                        child: Image.asset('images/soundcloud.png', width: 28)),
+                    InkWell(
+                        onTap: () {
+                          js.context.callMethod('open', [SnsLinks.spotify]);
+                        },
+                        child: Image.asset('images/spotify.png', width: 28)),
+                  ],
+                ),
               )
             ],
           )
