@@ -8,6 +8,7 @@ import 'package:wzukowski_com/widgets/drawer_mobile.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
 import 'package:wzukowski_com/widgets/separatorline.dart';
+import 'package:marvelous_carousel/marvelous_carousel.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -130,22 +131,30 @@ class _HomepageState extends State<Homepage> {
                   ],
                 )
               ),
-              Divider(thickness: 5),
+              const Divider(thickness: 5),
                // ŻukowskiMularski
               Container(
                 color: CustomColor.blackPrimary,
-                height: 500,
                 width: double.maxFinite,
-                child: EasyWebView(
-                      src: 'https://www.youtube.com/embed/q0OqUIQzKWw?si=a6GWb6Tvdordoyw7',
-                      width: constraints.maxWidth/3,
-                    )
+                child: Column(
+                  children: [
+                    const Text('MULARSKI/ZUKOWSKI'),
+                    SizedBox(
+                      height: 600,
+                      width: constraints.maxWidth/1.25,
+                      child: const EasyWebView(
+                            src: 'https://www.youtube.com/embed/q0OqUIQzKWw?si=a6GWb6Tvdordoyw7',
+                          ),
+                    ),
+                  ],
+                )
               ),
+              const Divider(thickness: 5),
               // installation
-              Container(
-                height: 500,
-                width: double.maxFinite,
-              ),
+              //Container(
+              //  height: 500,
+              //  width: double.maxFinite,
+              //),
               // CONTACT
               Container(
                 height: 500,
