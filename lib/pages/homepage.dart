@@ -73,16 +73,17 @@ class _HomepageState extends State<Homepage> {
                 color: CustomColor.yellowPrimary,
                 child: Stack(
                   children: [
+                    Text('seleced works', style: TextStyle(fontSize: 30, color: CustomColor.blackPrimary)),
                     Positioned(
                       top: 50,
                       right: 0,
                       child: EasyWebView(width: constraints.maxWidth/4, height: constraints.maxHeight/3.5, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1591642207&color=%23353e77&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true')
                     ),
-                    // Positioned(
-                    //   top: 0,
-                    //   left: 0,
-                    //   child: EasyWebView(width: constraints.maxWidth/4, height: constraints.maxHeight/3.5, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1453435387&color=%233c2d4f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true')
-                    // )
+                    Positioned(
+                      top: 0,
+                      left: 0,
+                      child: EasyWebView(width: constraints.maxWidth/4, height: constraints.maxHeight/3.5, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1453435387&color=%233c2d4f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true')
+                    ),
                   ],
                 ),
               ),
