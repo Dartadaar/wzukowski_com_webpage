@@ -2,7 +2,6 @@ import 'package:easy_web_view/easy_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/size.dart';
-import 'package:wzukowski_com/constants/sns_links.dart';
 import 'package:wzukowski_com/constants/works.dart';
 import 'package:wzukowski_com/widgets/custom_text_field.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
@@ -11,6 +10,7 @@ import 'package:wzukowski_com/widgets/header_mobile.dart';
 import 'package:wzukowski_com/widgets/separatorline.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
+//https://pub.dev/packages/widget_and_text_animator
 
 import 'package:wzukowski_com/widgets/sns.dart';
 
@@ -68,9 +68,23 @@ class _HomepageState extends State<Homepage> {
               ),
               // SELECTED WORKS
               Container(
-                height: 500,
+                height: constraints.maxHeight-60,
                 width: double.maxFinite,
                 color: CustomColor.yellowPrimary,
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 50,
+                      right: 0,
+                      child: EasyWebView(width: constraints.maxWidth/4, height: constraints.maxHeight/3.5, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1591642207&color=%23353e77&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true')
+                    ),
+                    // Positioned(
+                    //   top: 0,
+                    //   left: 0,
+                    //   child: EasyWebView(width: constraints.maxWidth/4, height: constraints.maxHeight/3.5, src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1453435387&color=%233c2d4f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true')
+                    // )
+                  ],
+                ),
               ),
               // LIST OF WORKS
               //uwaga z paddingami oblicza polowe ekranu
@@ -92,10 +106,10 @@ class _HomepageState extends State<Homepage> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
-                                  padding: const EdgeInsets.all(10),
-                                  color: Colors.green,
+                                  padding: const EdgeInsets.all(20),
+                                  //color: Colors.green,
                                   width: constraints.maxWidth/2,
-                                  child: Text(workTypes[i]),
+                                  child: Text(workTypes[i], style: const TextStyle(fontSize: 24),),
                                 )
                               ]
                             ),
@@ -114,9 +128,9 @@ class _HomepageState extends State<Homepage> {
                                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                           crossAxisAlignment: CrossAxisAlignment.start,
                                           children: [
-                                            Expanded( child: Text('${worksList[ii][0]} for ${worksList[ii][1]}', maxLines: 4, overflow: TextOverflow.ellipsis, textDirection: TextDirection.rtl, textAlign: TextAlign.left)),
+                                            Expanded( child: Text('${worksList[ii][0]} for ${worksList[ii][1]}', maxLines: 4, overflow: TextOverflow.ellipsis, textDirection: TextDirection.rtl, textAlign: TextAlign.left, style: const TextStyle(fontSize: 18),)),
                                             // ignore: unnecessary_null_comparison
-                                            Container(padding: EdgeInsets.only(left: 20),child: Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}'))
+                                            Container(padding: EdgeInsets.only(left: 20),child: Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}', style: const TextStyle(fontSize: 18),)) //rok
                                           ]
                                          ),
                                       ),
@@ -142,7 +156,7 @@ class _HomepageState extends State<Homepage> {
                 width: double.maxFinite,
                 child: Column(
                   children: [
-                    const Text('MULARSKI/ZUKOWSKI'),
+                    const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 70),),
                     SizedBox(
                       height: 600,
                       width: constraints.maxWidth/1.25,
@@ -176,7 +190,7 @@ class _HomepageState extends State<Homepage> {
                         children: [
                           Padding(
                             padding: EdgeInsets.symmetric(vertical: 80),
-                            child: Text('Get in Touch'),
+                            child: Text('Get in Touch', style: const TextStyle(fontSize: 46)),
                           ),
                           Text('Name'),
                           CustomTextField(),

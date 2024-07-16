@@ -9,7 +9,7 @@ class Sns extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-                  spacing: 12,
+                  spacing: 22,
                   runSpacing: 12,
                   alignment: WrapAlignment.start,
                   crossAxisAlignment: WrapCrossAlignment.center,

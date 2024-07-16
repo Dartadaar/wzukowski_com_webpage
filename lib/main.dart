@@ -14,9 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // textTheme: Theme.of(context).textTheme.apply(
-        //   fontSizeFactor: 1.1
-        // ),
         brightness: Brightness.dark,
         fontFamily: 'Gopher',
         primaryColor: CustomColor.whitePrimary
