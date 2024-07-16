@@ -9,8 +9,8 @@ class SiteLogo extends StatelessWidget {
     return GestureDetector(
                   onTap: onTap,
                   child: const Text("Włodzimierz Żukowski", style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w600,
+                    fontSize: 27,
+                    fontWeight: FontWeight.w500,
                     decoration: TextDecoration.underline,
                     color: CustomColor.whitePrimary
                   ),),

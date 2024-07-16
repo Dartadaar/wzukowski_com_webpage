@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/nav_items.dart';
 import 'package:wzukowski_com/widgets/site_logo.dart';
+import 'package:wzukowski_com/widgets/sns.dart';
 
 class HeaderDesktop extends StatelessWidget {
   const HeaderDesktop({super.key});
@@ -25,13 +26,16 @@ class HeaderDesktop extends StatelessWidget {
                       ),),
                     ),
                   ),
-
-                const Spacer(),
+                
+                Spacer(),
 
                 SiteLogo(
                   onTap: (){},
                 ),
-                //dodać social networks
+
+                Spacer(),
+
+                Sns()
               ],
             ),
           );

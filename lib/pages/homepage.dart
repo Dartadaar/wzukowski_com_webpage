@@ -12,6 +12,8 @@ import 'package:wzukowski_com/widgets/separatorline.dart';
 // ignore: avoid_web_libraries_in_flutter
 import 'dart:js' as js;
 
+import 'package:wzukowski_com/widgets/sns.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -192,35 +194,9 @@ class _HomepageState extends State<Homepage> {
               // FOOTER
               Container(
                 color: CustomColor.blackPrimary,
-                height: 100 ,
+                height: 100,
                 width: double.maxFinite,
-                child: Wrap(
-                  spacing: 12,
-                  runSpacing: 12,
-                  alignment: WrapAlignment.start,
-                  children: [
-                    InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.instagram]);
-                        },
-                        child: Image.asset('images/instagram.png', width: 28,)),
-                    InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.youtube]);
-                        },
-                        child: Image.asset('images/youtube.png', width: 28)),
-                    InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.soundcloud]);
-                        },
-                        child: Image.asset('images/soundcloud.png', width: 28)),
-                    InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.spotify]);
-                        },
-                        child: Image.asset('images/spotify.png', width: 28)),
-                  ],
-                ),
+                child: const Sns()
               )
             ],
           )
