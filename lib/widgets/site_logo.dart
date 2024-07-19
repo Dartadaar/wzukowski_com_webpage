@@ -10,8 +10,7 @@ class SiteLogo extends StatelessWidget {
                   onTap: onTap,
                   child: const Text("Włodzimierz Żukowski", style: TextStyle(
                     fontSize: 27,
-                    fontWeight: FontWeight.w500,
-                    decoration: TextDecoration.underline,
+                    fontWeight: FontWeight.w400,
                     color: CustomColor.whitePrimary
                   ),),
                 );

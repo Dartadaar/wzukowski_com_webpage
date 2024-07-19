@@ -11,10 +11,10 @@ var worksList = [
   ["K5(6)", "live electronics and ensemble (fl, cl, bcl, tsax, acc, 2vn, va, vc, db)", 2023, 1],
   ["IT IS NO NIGHT TO DROWN IN", "female voice, wind quartet (ssax, 2cl, bcl), live electronics and video", 2023, 1],
   ["Dispute between a man and his Ba", "baritone, harp, live electronics and lights", 2022, 1, "https://youtu.be/FoOrYkL__nY?si=xwkrbkgCZZMuZcaw"],
-  ["ashling scattered over several provinces (Dolby Atmos)", "", 2024, 2],
-  ["postludium (Dolby Atmos)", "", 2023, 2, "https://soundcloud.com/dartadaar/postludium-binaural-headphones-recommended?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"],
-  ["Etüden der elektronischen Musik", "", 2022, 2],
-  ["luna", "", 2022, 2, "https://recordu.lnk.to/4W88xn"]
+  ["ashling scattered over several provinces (Dolby Atmos)", "dolby atmos playback", 2024, 2],
+  ["postludium", "dolby atmos playback", 2023, 2, "https://soundcloud.com/dartadaar/postludium-binaural-headphones-recommended?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"],
+  ["Etüden der elektronischen Musik", "2.0 playback", 2022, 2],
+  ["luna", "2.0 playback", 2022, 2, "https://recordu.lnk.to/4W88xn"]
 ];
 
 var workTypes = ["acoustic works", "electroacoustic works", "acousmatic works"];
