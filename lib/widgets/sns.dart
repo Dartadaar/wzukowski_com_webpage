@@ -18,22 +18,22 @@ class Sns extends StatelessWidget {
                         onTap: () {
                           js.context.callMethod('open', [SnsLinks.instagram]);
                         },
-                        child: Image.asset('images/instagram.png', width: 15,)),
+                        child: Image.asset('assets/images/instagram.png', width: 15,)),
                     InkWell(
                         onTap: () {
                           js.context.callMethod('open', [SnsLinks.youtube]);
                         },
-                        child: Image.asset('images/youtube.png', width: 18)),
+                        child: Image.asset('assets/images/youtube.png', width: 18)),
                     InkWell(
                         onTap: () {
                           js.context.callMethod('open', [SnsLinks.soundcloud]);
                         },
-                        child: Image.asset('images/soundcloud.png', width: 18)),
+                        child: Image.asset('assets/images/soundcloud.png', width: 18)),
                     InkWell(
                         onTap: () {
                           js.context.callMethod('open', [SnsLinks.spotify]);
                         },
-                        child: Image.asset('images/spotify.png', width: 16)),
+                        child: Image.asset('assets/images/spotify.png', width: 16)),
                   ],
                 );
   }

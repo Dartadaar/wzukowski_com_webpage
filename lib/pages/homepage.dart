@@ -64,46 +64,46 @@ class _HomepageState extends State<Homepage> {
                         scaffoldKey.currentState?.openEndDrawer();
                       },
                       ),
-                      SizedBox(width: double.infinity, height: 40),
-                      TextScroll('live visual artist | improviser | composer | ', mode: TextScrollMode.endless, velocity: Velocity(pixelsPerSecond: Offset(40, 0)), style: TextStyle(fontSize: 90, fontWeight: FontWeight.w500)),
-                      Spacer(),
-                      TextScroll('beep boop | dolby atmos | max/msp | vwɔˈʥ̑ĩmʲjɛʃ ʒuˈkɔfsʲci | grandMA3 | dart | touchdesigner | beep boop | ambisonic audio | dolby atmos | video art | ', mode: TextScrollMode.endless, velocity: Velocity(pixelsPerSecond: Offset(40, 0)), style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
-                      TextScroll(
+                      const SizedBox(width: double.infinity, height: 40),
+                      const TextScroll('live visual artist | improviser | composer | ', mode: TextScrollMode.endless, velocity: Velocity(pixelsPerSecond: Offset(40, 0)), style: TextStyle(fontSize: 90, fontWeight: FontWeight.w500)),
+                      const Spacer(),
+                      const TextScroll('beep boop | dolby atmos | max/msp | vwɔˈʥ̑ĩmʲjɛʃ ʒuˈkɔfsʲci | grandMA3 | dart | touchdesigner | beep boop | ambisonic audio | dolby atmos | video art | ', mode: TextScrollMode.endless, velocity: Velocity(pixelsPerSecond: Offset(40, 0)), style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+                      const TextScroll(
                           'offset | pyramid texts 436 | innermost | concerto for quarter-tone hammond organ | my private property | K5(6) | IT IS NO NIGHT TO DROWN IN | an orange balloon drifting over snow-capped mountains | postludium | luna | ashling scattered over several provinces | ',
                           mode: TextScrollMode.endless,
                           velocity: Velocity(pixelsPerSecond: Offset(38, 0)),
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500)
                       ),
-                      TextScroll(
+                      const TextScroll(
                           'K5(6) | IT IS NO NIGHT TO DROWN IN | an orange balloon drifting over snow-capped mountains | postludium | luna | ashling scattered over several provinces | soundscapewalks | offset | pyramid texts 436 | innermost | concerto for quarter-tone hammond organ | my private property | ',
                           mode: TextScrollMode.endless,
                           velocity: Velocity(pixelsPerSecond: Offset(36, 0)),
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500)
                       ),
-                      TextScroll(
+                      const TextScroll(
                           'postludium | luna | ashling scattered over several provinces | offset | pyramid texts 436 | innermost | concerto for quarter-tone hammond organ | my private property | soundscapewalks | K5(6) | IT IS NO NIGHT TO DROWN IN | an orange balloon drifting over snow-capped mountains | ',
                           mode: TextScrollMode.endless,
                           velocity: Velocity(pixelsPerSecond: Offset(34, 0)),
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500)
                       ),
-                      TextScroll(
+                      const TextScroll(
                           'offset | pyramid texts 436 | innermost | concerto for quarter-tone hammond organ | my private property | K5(6) | IT IS NO NIGHT TO DROWN IN | an orange balloon drifting over snow-capped mountains | postludium | soundscapewalks | luna | ashling scattered over several provinces | ',
                           mode: TextScrollMode.endless,
                           velocity: Velocity(pixelsPerSecond: Offset(37, 0)),
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500)
                       ),
-                      TextScroll(
+                      const TextScroll(
                           'concerto for quarter-tone hammond organ | my private property | K5(6) | IT IS NO NIGHT TO DROWN IN | an orange balloon drifting over snow-capped mountains | postludium | soundscapewalks | luna | ashling scattered over several provinces | offset | pyramid texts 436 | innermost | ',
                           mode: TextScrollMode.endless,
                           velocity: Velocity(pixelsPerSecond: Offset(39, 0)),
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500)
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: double.maxFinite,
                         height: 60
                       )
@@ -121,12 +121,12 @@ class _HomepageState extends State<Homepage> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('seleced works', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary)),
+                          const Text('seleced works', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary)),
                           InkWell(
                             onTap: (){
                               js.context.callMethod('open', [SnsLinks.linktree]);
                             },
-                            child: Text('socials', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary, decoration: TextDecoration.underline, decorationColor: CustomColor.blackPrimary))
+                            child: const Text('socials', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary, decoration: TextDecoration.underline, decorationColor: CustomColor.blackPrimary))
                             )
                         ],
                       ),
@@ -206,11 +206,11 @@ class _HomepageState extends State<Homepage> {
                                             children: [
                                               Expanded( child: Text('${worksList[ii][0]} for ${worksList[ii][1]}', maxLines: 4, overflow: TextOverflow.ellipsis, textDirection: TextDirection.rtl, textAlign: TextAlign.left, style: const TextStyle(fontSize: 18),)),
                                               // ignore: unnecessary_null_comparison
-                                              Container(padding: EdgeInsets.only(left: 20),child: Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}', style: const TextStyle(fontSize: 18),)) //rok
+                                              Container(padding: const EdgeInsets.only(left: 20),child: Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}', style: const TextStyle(fontSize: 18),)) //rok
                                             ]
                                            ),
                                         ),
-                                         Divider(color: CustomColor.whitePrimary, height: 0,)
+                                         const Divider(color: CustomColor.whitePrimary, height: 0,)
                                       ],
                                     ),
                                   )
@@ -219,15 +219,15 @@ class _HomepageState extends State<Homepage> {
                             ]
                           ),
                           if (i<workTypes.length-1)
-                          SeparatorLine()
+                          const SeparatorLine()
                         ],
                       ),
                     ],
                   )
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 25),
-                  child: const Divider(thickness: 3),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 25),
+                  child: Divider(thickness: 3),
                 ),
                  // ŻukowskiMularski
                 Container(
@@ -272,17 +272,17 @@ class _HomepageState extends State<Homepage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Padding(
+                            const Padding(
                               padding: EdgeInsets.symmetric(vertical: 80),
                               child: Text('Get in Touch',
-                                  style: const TextStyle(fontSize: 46)),
+                                  style: TextStyle(fontSize: 46)),
                             ),
-                            Text('Name', style: TextStyle(fontSize: 18)),
-                            CustomTextField(),
-                            Text('Email', style: TextStyle(fontSize: 18)),
-                            CustomTextField(),
-                            Text('Message', style: TextStyle(fontSize: 18)),
-                            CustomTextField(maxLines: 5),
+                            const Text('Name', style: TextStyle(fontSize: 18)),
+                            const CustomTextField(),
+                            const Text('Email', style: TextStyle(fontSize: 18)),
+                            const CustomTextField(),
+                            const Text('Message', style: TextStyle(fontSize: 18)),
+                            const CustomTextField(maxLines: 5),
                             SizedBox(
                                 width: 140,
                                 height: 45,
@@ -293,7 +293,7 @@ class _HomepageState extends State<Homepage> {
                                             CustomColor.yellowPrimary,
                                         foregroundColor:
                                             CustomColor.blackPrimary),
-                                    child: Text('Send',
+                                    child: const Text('Send',
                                         style: TextStyle(fontSize: 18))))
                           ],
                         ),
