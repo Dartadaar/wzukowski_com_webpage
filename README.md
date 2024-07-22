@@ -1,6 +1,6 @@
 # wzukowski_com
 
-Source-code for [the website](https://wzukowski.com]
+Source-code for [the website](https://wzukowski.com)
 
 ## Things to remember
 
