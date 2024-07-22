@@ -15,5 +15,5 @@ Source-code for [the website](https://wzukowski.com)
 
 ## Thing to implement in far far future
 
-- project pages (soundscape walks/Mularski/Żukowski)
+- project pages (soundscape walks/Mularski/Żukowski) //learn go_router
 - proper mail button
