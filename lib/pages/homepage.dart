@@ -56,7 +56,6 @@ class _HomepageState extends State<Homepage> {
                   child: Column(
                     children: [
                       constraints.maxWidth >= kMinDesktopWidth ? HeaderDesktop(onNavMenuTap: (int navIndex){
-                        //callfunc
                         scrollToSection(navIndex);
                       }): HeaderMobile(
                       onLogoTap: (){},
@@ -169,7 +168,7 @@ class _HomepageState extends State<Homepage> {
                       const SizedBox(
                         width: double.maxFinite,
                         height: 30,
-                      ),
+                      ),  
                       for(int i=0; i<workTypes.length; i++) //pętla rodzajów
                       Column(
                         children: [
