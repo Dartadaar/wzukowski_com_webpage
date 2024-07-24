@@ -6,7 +6,7 @@ var worksList = [
   ["Concerto", "quarter-tone hammond organ, harp and string orchestra", 2022, 0, "https://soundcloud.com/dartadaar/koncert-v2?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"],
   ["Book of Coming Forth by Day", "bass clarinet and harp", 2021, 0, "https://youtu.be/dY7EPQdPPA4?si=uPpJ9g2AM_5TQEqT"],
   ["Consecutio temporum", "tenor saxophone and percussion", 2020, 0, "https://www.youtube.com/watch?v=X1KQVqNx5to"],
-  ["an orange balloon drifting over snow-capped mountains", "electric guitar, ensemble (fl, ob, bcl, cbn, hn, 2acc, hp, 2vn, 2va), live electronics and lights (2024)", 2023, 1],
+  ["an orange balloon drifting over snow-capped mountains", "electric guitar, ensemble (fl, ob, bcl, cbn, hn, 2acc, hp, 2vn, 2va), live electronics and lights", 2023, 1],
   ["My Private Property", "amplified voice, piano, turntable and sampler", 2023, 1],
   ["K5(6)", "live electronics and ensemble (fl, cl, bcl, tsax, acc, 2vn, va, vc, db)", 2023, 1],
   ["IT IS NO NIGHT TO DROWN IN", "female voice, wind quartet (ssax, 2cl, bcl), live electronics and video", 2023, 1],

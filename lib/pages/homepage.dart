@@ -168,52 +168,61 @@ class _HomepageState extends State<Homepage> {
                       const SizedBox(
                         width: double.maxFinite,
                         height: 30,
-                      ),  
+                      ),
                       for(int i=0; i<workTypes.length; i++) //pętla rodzajów
                       Column(
                         children: [
                           Row(
                             mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(20),
-                                    //color: Colors.green,
-                                    width: constraints.maxWidth/2,
-                                    child: Text(workTypes[i], style: const TextStyle(fontSize: 24),),
-                                  )
-                                ]
-                              ),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end, children:[
-                                  for (int ii=0;ii<worksList.length;ii++)
-                                  if (worksList[ii][3]==i)
-                                  Container(
-                                    width: constraints.maxWidth/2,
-                                    padding: const EdgeInsets.all(10),
-                                    child: Column(
-                                      children: [
-                                        Container(
-                                          padding: const EdgeInsets.only(top: 20, bottom: 40),
-                                          child: Row(
-                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Expanded( child: Text('${worksList[ii][0]} for ${worksList[ii][1]}', maxLines: 4, overflow: TextOverflow.ellipsis, textDirection: TextDirection.rtl, textAlign: TextAlign.left, style: const TextStyle(fontSize: 18),)),
-                                              // ignore: unnecessary_null_comparison
-                                              Container(padding: const EdgeInsets.only(left: 20),child: Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}', style: const TextStyle(fontSize: 18),)) //rok
-                                            ]
-                                           ),
-                                        ),
-                                         const Divider(color: CustomColor.whitePrimary, height: 0,)
-                                      ],
-                                    ),
-                                  )
+                              Flexible(
+                                flex: 1,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(20),
+                                      //color: Colors.green,
+                                      //width: constraints.maxWidth/2,
+                                      child: Text(workTypes[i], style: const TextStyle(fontSize: 24),),
+                                    )
                                   ]
+                                ),
+                              ),
+                              Flexible(
+                                flex: 1,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end, children:[
+                                    for (int ii=0;ii<worksList.length;ii++)
+                                    if (worksList[ii][3]==i)
+                                    Container(
+                                      //width: constraints.maxWidth/2,
+                                      padding: const EdgeInsets.all(10),
+                                      child: Column(
+                                        children: [
+                                          Container(
+                                            padding: const EdgeInsets.only(top: 20, bottom: 40),
+                                            child: Row(
+                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                              crossAxisAlignment: CrossAxisAlignment.start,
+                                              children: [
+                                                Expanded(
+                                                    child:
+                                                    worksList[ii].length >= 5 ? InkWell(onTap: (){js.context.callMethod('open', [worksList[ii][4]]);}, child: Text('${worksList[ii][0]} for ${worksList[ii][1]}', maxLines: 4, overflow: TextOverflow.ellipsis, textDirection: TextDirection.rtl, textAlign: TextAlign.left, style: const TextStyle(fontSize: 18, decoration: TextDecoration.underline),)) : Text('${worksList[ii][0]} for ${worksList[ii][1]}', maxLines: 4, overflow: TextOverflow.ellipsis, textDirection: TextDirection.rtl, textAlign: TextAlign.left, style: const TextStyle(fontSize: 18),)
+                                                ),
+                                                // ignore: unnecessary_null_comparison
+                                                Container(padding: const EdgeInsets.only(left: 20),child: Text(worksList[ii][2] == null ? "Empty" : '${worksList[ii][2]}', style: const TextStyle(fontSize: 18),)) //rok
+                                              ]
+                                             ),
+                                          ),
+                                           const Divider(color: CustomColor.whitePrimary, height: 0,)
+                                        ],
+                                      ),
+                                    )
+                                    ]
+                                ),
                               ),
                             ]
                           ),
