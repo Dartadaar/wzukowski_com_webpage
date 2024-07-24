@@ -200,7 +200,7 @@ class _HomepageState extends State<Homepage> {
                       Container(
                         width: constraints.maxWidth/2,
                         decoration: const BoxDecoration(
-                         image: DecorationImage(image: AssetImage('assets/images/profile.jpg'),
+                        image: DecorationImage(image: AssetImage('assets/images/profile.jpg'),
                           fit: BoxFit.cover
                           ),
                         ),
