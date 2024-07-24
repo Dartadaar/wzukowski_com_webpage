@@ -1,11 +1,11 @@
 {
-    "name": "wzukowski_com",
-    "short_name": "wzukowski_com",
+    "name": "Włodzimierz Żukowski - composer, improviser",
+    "short_name": "Włodzimierz Żukowski",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Włodzimierz Żukowski - composer, improviser, light designer, media artist. Having predominant interest in musical composition he explores akin areas, such as generative visual media art, stage theatre lighting, computer network design and phonology that converge into interrelated and interdisciplinary works.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
