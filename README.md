@@ -8,8 +8,7 @@ Source-code for [the website](https://wzukowski.com)
 
 ## Thing to implement
 
-- smartphone UI for "Get in touch" and "pieces" sections
-- links for the pieces
+- smartphone UI for "Get in touch" sections
 - email send button (quickfix with a link)
 - adaptive height "Get in touch" section
 
