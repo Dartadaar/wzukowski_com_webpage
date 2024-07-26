@@ -1,16 +1,16 @@
 # wzukowski_com
 
-Source-code for [the website](https://wzukowski.com)
+Source-code for [the website](https://wzukowski.com). 
 
-## Things to remember
+**Technologies**
+* Flutter
+* Dart
 
-- flutter project build specifically for web (JS library)
+**Deployment**
+* The website is deployed and live at [wzukowski.com].
+* Built using Flutter for web.
+* Flutter project build specifically for web (JS library).
 
-## Thing to implement
+**License**
 
-- email send button (quickfix with a link)
-
-## Thing to implement in far far future
-
-- project pages (soundscape walks/Mularski/Żukowski) //learn go_router
-- proper mail button
+* The source code for this website is licensed under the GNU General Public License v3.0.
