@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/size.dart';
 import 'package:wzukowski_com/constants/sns_links.dart';
-import 'package:wzukowski_com/widgets/custom_text_field.dart';
+import 'package:wzukowski_com/widgets/contact_desktop.dart';
+import 'package:wzukowski_com/widgets/contact_mobile.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
@@ -190,56 +191,7 @@ class _HomepageState extends State<Homepage> {
                   padding: EdgeInsets.only(top: 40),
                   child: Divider(thickness: 3),
                 ),
-                Container(
-                  key: navbarKeys[2],
-                  color: CustomColor.blackPrimary,
-                  width: double.maxFinite,
-                  height: 800,
-                  child: Row(
-                    children: [
-                      Container(
-                        width: constraints.maxWidth/2,
-                        decoration: const BoxDecoration(
-                        image: DecorationImage(image: AssetImage('assets/images/profile.jpg'),
-                          fit: BoxFit.cover
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: constraints.maxWidth/2,
-                        padding: const EdgeInsets.all(50),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 80),
-                              child: Text('Get in Touch',
-                                  style: TextStyle(fontSize: 46)),
-                            ),
-                            const Text('Name', style: TextStyle(fontSize: 18)),
-                            const CustomTextField(),
-                            const Text('Email', style: TextStyle(fontSize: 18)),
-                            const CustomTextField(),
-                            const Text('Message', style: TextStyle(fontSize: 18)),
-                            const CustomTextField(maxLines: 5),
-                            SizedBox(
-                                width: 140,
-                                height: 45,
-                                child: ElevatedButton(
-                                    onPressed: () {},
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor:
-                                            CustomColor.yellowPrimary,
-                                        foregroundColor:
-                                            CustomColor.blackPrimary),
-                                    child: const Text('Send',
-                                        style: TextStyle(fontSize: 18))))
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                Container(key: navbarKeys[2], child: constraints.maxWidth >= kMinDesktopWidth ? const ContactDesktop() : const ContactMobile()),
                 // FOOTER
                 Container(
                   color: CustomColor.blackPrimary,
