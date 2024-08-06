@@ -167,7 +167,7 @@ class _HomepageState extends State<Homepage> {
                 ),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 25),
-                  child: Divider(thickness: 3),
+                  child: Divider(thickness: 3, height: 0, color: CustomColor.whitePrimary),
                 ),
                  // ŻukowskiMularski
                 Container(
@@ -189,7 +189,7 @@ class _HomepageState extends State<Homepage> {
                 // Contact
                 const Padding(
                   padding: EdgeInsets.only(top: 40),
-                  child: Divider(thickness: 3),
+                  child: Divider(thickness: 3, height: 0, color: CustomColor.whitePrimary),
                 ),
                 Container(key: navbarKeys[2], child: constraints.maxWidth >= kMinDesktopWidth ? const ContactDesktop() : const ContactMobile()),
                 // FOOTER
