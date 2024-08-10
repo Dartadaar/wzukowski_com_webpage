@@ -12,8 +12,9 @@ class Gallery extends StatelessWidget {
         SizedBox(
           height: galleryheight,
           child: CarouselView(
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
               itemExtent: MediaQuery.of(context).size.width - 32,
-              children: List.generate(3, (int index) {
+              children: List.generate(5, (int index) {
                 return Container(
                     color: Colors.grey,
                     child: Image.asset('assets/images/slidergallery/$index.jpg', fit: BoxFit.cover,));
