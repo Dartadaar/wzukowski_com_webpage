@@ -158,7 +158,6 @@ class _HomepageState extends State<Homepage> {
                   ),
                 ),
                 // LIST OF WORKS
-                //uwaga z paddingami oblicza polowe ekranu
                 Container(
                   key: navbarKeys[1],
                   width: double.maxFinite,
