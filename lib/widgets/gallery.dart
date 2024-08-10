@@ -8,7 +8,7 @@ class Gallery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('live visual art', style: TextStyle(fontSize: 70)),
+        const Text('live visual projects', style: TextStyle(fontSize: 70)),
         SizedBox(
           height: galleryheight,
           child: CarouselView(
