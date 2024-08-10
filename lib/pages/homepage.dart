@@ -187,9 +187,12 @@ class _HomepageState extends State<Homepage> {
                   )
                 ),
                 //live visual realisations
-                Container(
-                  width: double.maxFinite,
-                  child: Gallery(),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: SizedBox(
+                    width: double.maxFinite,
+                    child: Gallery(galleryheight: constraints.maxHeight-100),
+                  ),
                 ),
                 // Contact
                 const Padding(
