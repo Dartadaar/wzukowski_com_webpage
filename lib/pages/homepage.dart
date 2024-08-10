@@ -6,6 +6,7 @@ import 'package:wzukowski_com/constants/sns_links.dart';
 import 'package:wzukowski_com/widgets/contact_desktop.dart';
 import 'package:wzukowski_com/widgets/contact_mobile.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
+import 'package:wzukowski_com/widgets/gallery.dart';
 import 'package:wzukowski_com/widgets/header_desktop.dart';
 import 'package:wzukowski_com/widgets/header_mobile.dart';
 import 'package:wzukowski_com/widgets/list_of_works_desktop.dart';
@@ -184,6 +185,11 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ],
                   )
+                ),
+                //live visual realisations
+                Container(
+                  width: double.maxFinite,
+                  child: Gallery(),
                 ),
                 // Contact
                 const Padding(
