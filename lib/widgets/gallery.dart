@@ -11,7 +11,7 @@ class Gallery extends StatelessWidget {
     return Column(
       children: [
         const Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: EdgeInsets.all(25.0),
           child: Text('live visuals', style: TextStyle(fontSize: 65, color: CustomColor.yellowPrimary)),
         ),
         SizedBox(
