@@ -186,7 +186,7 @@ class _HomepageState extends State<Homepage> {
                     ],
                   )
                 ),
-                //live visual realisations
+                //live visuals gallery
                 const Divider(thickness: 3, height: 0, color: CustomColor.whitePrimary),
                 Padding(
                   padding: const EdgeInsets.all(12.0),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/colors.dart';
+
 class Gallery extends StatelessWidget {
   final double galleryheight;
   const Gallery({super.key, required this.galleryheight});
@@ -8,7 +10,7 @@ class Gallery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('live visual projects', style: TextStyle(fontSize: 70)),
+        const Text('live visuals', style: TextStyle(fontSize: 60, color: CustomColor.yellowPrimary)),
         SizedBox(
           height: galleryheight,
           child: CarouselView(
