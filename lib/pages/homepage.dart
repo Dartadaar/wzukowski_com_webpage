@@ -175,7 +175,7 @@ class _HomepageState extends State<Homepage> {
                   width: double.maxFinite,
                   child: Column(
                     children: [
-                      const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 70),),
+                      constraints.maxWidth >= kMinDesktopWidth ? Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 70)) : Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 35)),
                       SizedBox(
                         height: 600,
                         width: constraints.maxWidth/1.25,
