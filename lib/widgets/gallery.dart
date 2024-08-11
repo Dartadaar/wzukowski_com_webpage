@@ -10,7 +10,10 @@ class Gallery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text('live visuals', style: TextStyle(fontSize: 60, color: CustomColor.yellowPrimary)),
+        const Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Text('live visuals', style: TextStyle(fontSize: 65, color: CustomColor.yellowPrimary)),
+        ),
         SizedBox(
           height: galleryheight,
           child: CarouselView(
