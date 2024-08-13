@@ -175,7 +175,7 @@ class _HomepageState extends State<Homepage> {
                   width: double.maxFinite,
                   child: Column(
                     children: [
-                      constraints.maxWidth >= kMinDesktopWidth ? Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 70)) : Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 35)),
+                      constraints.maxWidth >= kMinDesktopWidth ? const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 70)) : const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 35)),
                       SizedBox(
                         height: 600,
                         width: constraints.maxWidth/1.25,
@@ -192,7 +192,7 @@ class _HomepageState extends State<Homepage> {
                   padding: const EdgeInsets.all(12.0),
                   child: SizedBox(
                     width: double.maxFinite,
-                    child: Gallery(galleryheight: constraints.maxHeight-100),
+                    child: Gallery(galleryheight: constraints.maxHeight-200),
                   ),
                 ),
                 // Contact

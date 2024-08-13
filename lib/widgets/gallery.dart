@@ -18,7 +18,8 @@ class Gallery extends StatelessWidget {
           height: galleryheight,
           child: CarouselView(
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              itemExtent: MediaQuery.of(context).size.width - 32,
+              itemExtent: MediaQuery.of(context).size.width - 60,
+              itemSnapping: true,
               children: List.generate(5, (int index) {
                 return Container(
                     color: Colors.grey,
