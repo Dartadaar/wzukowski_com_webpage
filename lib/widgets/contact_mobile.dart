@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
+import 'dart:js' as js;
 
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
-import 'dart:js' as js;
 
-class ContactMobile extends StatelessWidget {
+class ContactMobile extends StatefulWidget {
   const ContactMobile({super.key});
+
+  @override
+  _ContactMobileState createState() => _ContactMobileState();
+}
+
+class _ContactMobileState extends State<ContactMobile> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _messageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +27,9 @@ class ContactMobile extends StatelessWidget {
             height: 300,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/images/profile.jpg'),
-                  fit: BoxFit.cover),
+                image: AssetImage('assets/images/profile.jpg'),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Container(
@@ -32,33 +42,41 @@ class ContactMobile extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: 6),
                   child: Text('Name', style: TextStyle(fontSize: 18)),
                 ),
-                const CustomTextField(),
+                CustomTextField(controller: _nameController),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 6),
                   child: Text('Email', style: TextStyle(fontSize: 18)),
                 ),
-                const CustomTextField(),
+                CustomTextField(controller: _emailController),
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 6),
                   child: Text('Message', style: TextStyle(fontSize: 18)),
                 ),
-                const CustomTextField(maxLines: 5),
+                CustomTextField(controller: _messageController, maxLines: 5),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   child: SizedBox(
-                      width: 140,
-                      height: 45,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            js.context.callMethod('open', [
-                              'mailto:wl.zukowski@outlook.com?subject=Website message'
-                            ]);
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: CustomColor.yellowPrimary,
-                              foregroundColor: CustomColor.blackPrimary),
-                          child: const Text('Send',
-                              style: TextStyle(fontSize: 18)))),
+                    width: 140,
+                    height: 45,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        final name = _nameController.text;
+                        final email = _emailController.text;
+                        final message = _messageController.text;
+
+                        final mailtoLink = Uri.encodeFull(
+                          'mailto:wl.zukowski@outlook.com?subject=Website message from $name&body=Name: $name\nEmail: $email\n\nMessage:\n$message',
+                        );
+
+                        js.context.callMethod('open', [mailtoLink]);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: CustomColor.yellowPrimary,
+                        foregroundColor: CustomColor.blackPrimary,
+                      ),
+                      child: const Text('Send', style: TextStyle(fontSize: 18)),
+                    ),
+                  ),
                 )
               ],
             ),
@@ -68,5 +86,3 @@ class ContactMobile extends StatelessWidget {
     );
   }
 }
-
-//mailto:wl.zukowski@outlook.com?subject=Website message &body=this is an article on how to use the mailto link
