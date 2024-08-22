@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
+import 'dart:js' as js;
 
 class ContactDesktop extends StatelessWidget {
   const ContactDesktop({super.key});
@@ -57,7 +58,10 @@ class ContactDesktop extends StatelessWidget {
                         width: 140,
                         height: 45,
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              js.context
+                                  .callMethod('open', ['mailto:wl.zukowski@outlook.com?subject=Website message']);
+                            },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: CustomColor.yellowPrimary,
                                 foregroundColor: CustomColor.blackPrimary),
