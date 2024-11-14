@@ -1,5 +1,7 @@
 var worksList = [
-  ["Cool black / Bellflower color (Kikyō-iro)", "small ensemble (picc, cl, perc, pf, vn, va, vc)", 2024, 0],
+  ["endsay", "va, 2.0 playback and media"],
+  ["nomads II", "vn and cbas clarinet", 2024, 0],
+  ["Cool black / Bellflower color (Kikyō-iro)", "small ensemble (picc, cl, perc, acc, gtr, vn, va, vc)", 2024, 0],
   ["offset", "any melodic instrument/combination of instruments", 2023, 0],
   ["Pyramid texts 436", "5 voices and small ensemble", 2023, 0, "https://www.youtube.com/watch?v=9uDACnbZRQs"],
   ["Innermost", "10 string instruments and piano", 2022, 0],
@@ -19,5 +21,5 @@ var worksList = [
 
 var workTypes = ["acoustic works", "electroacoustic works", "acousmatic works"];
 
-//1-acoustic, 2-electroacustic, 3-acousmatic
+//0-acoustic, 1-electroacustic, 2-acousmatic
 //[title, year, type, /link/]
