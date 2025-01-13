@@ -1,5 +1,6 @@
 var worksList = [
-  ["endsay", "va, 2.0 playback and media"],
+  ["endsay II", "va, small ensemble (fl, cl, acc, vn, vc, cb) and media", 2025, 1],
+  ["endsay", "va, 2.0 playback and media", 2024, 1],
   ["nomads II", "vn and cbas clarinet", 2024, 0],
   ["Cool black / Bellflower color (Kikyō-iro)", "small ensemble (picc, cl, perc, acc, gtr, vn, va, vc)", 2024, 0],
   ["offset", "any melodic instrument/combination of instruments", 2023, 0],
