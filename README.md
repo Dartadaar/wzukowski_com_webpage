@@ -1,16 +1,13 @@
-# wzukowski_com
+# Włodzimierz Żukowski - Portfolio Website
 
-Source-code for [the website](https://wzukowski.com). 
+Personal portfolio website built with Flutter for web.
 
-**Technologies**
-* Flutter
-* Dart
+## Overview
 
-**Deployment**
-* The website is deployed and live at [wzukowski.com].
-* Built using Flutter for web.
-* Flutter project build specifically for web (JS library).
+This is a private repository containing source code for my personal portfolio website [wzukowski.com](https://wzukowski.com).
 
-**License**
+## Development
 
-* The source code for this website is licensed under the GNU General Public License v3.0.
+Built using:
+- Flutter
+- Dart
