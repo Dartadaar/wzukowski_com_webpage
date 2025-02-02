@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
@@ -8,10 +8,10 @@ class ContactDesktop extends StatefulWidget {
   const ContactDesktop({super.key});
 
   @override
-  _ContactDesktopState createState() => _ContactDesktopState();
+  ContactDesktopState createState() => ContactDesktopState();
 }
 
-class _ContactDesktopState extends State<ContactDesktop> {
+class ContactDesktopState extends State<ContactDesktop> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
@@ -67,7 +67,7 @@ class _ContactDesktopState extends State<ContactDesktop> {
                       width: 140,
                       height: 45,
                       child: ElevatedButton(
-                        onPressed: () {
+                        onPressed: () async {
                           final name = _nameController.text;
                           final email = _emailController.text;
                           final message = _messageController.text;
@@ -76,7 +76,7 @@ class _ContactDesktopState extends State<ContactDesktop> {
                             'mailto:wl.zukowski@outlook.com?subject=Website message from $name&body=Name: $name\nEmail: $email\n\nMessage:\n$message',
                           );
 
-                          js.context.callMethod('open', [mailtoLink]);
+                          await launchUrl(Uri.parse(mailtoLink));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: CustomColor.yellowPrimary,

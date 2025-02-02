@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   easy_web_view: ^2.0.2
   text_scroll: ^0.2.0
+  url_launcher: ^6.3.1
   
 
 dev_dependencies:

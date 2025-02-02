@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wzukowski_com/constants/sns_links.dart';
 
 class Sns extends StatelessWidget {
@@ -13,25 +12,25 @@ class Sns extends StatelessWidget {
                   runSpacing: 12,
                   alignment: WrapAlignment.start,
                   crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
+                    children: [
                     InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.instagram]);
-                        },
-                        child: Image.asset('assets/images/instagram.png', width: 15,)),
+                      onTap: () async {
+                        await launchUrl(Uri.parse(SnsLinks.instagram));
+                      },
+                      child: Image.asset('assets/images/instagram.png', width: 15,)),
                     InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.youtube]);
-                        },
-                        child: Image.asset('assets/images/youtube.png', width: 18)),
+                      onTap: () async {
+                        await launchUrl(Uri.parse(SnsLinks.youtube));
+                      },
+                      child: Image.asset('assets/images/youtube.png', width: 18)),
                     InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.soundcloud]);
-                        },
-                        child: Image.asset('assets/images/soundcloud.png', width: 18)),
+                      onTap: () async {
+                        await launchUrl(Uri.parse(SnsLinks.soundcloud));
+                      },
+                      child: Image.asset('assets/images/soundcloud.png', width: 18)),
                     InkWell(
-                        onTap: () {
-                          js.context.callMethod('open', [SnsLinks.spotify]);
+                      onTap: () async {
+                        await launchUrl(Uri.parse(SnsLinks.spotify));
                         },
                         child: Image.asset('assets/images/spotify.png', width: 16)),
                   ],

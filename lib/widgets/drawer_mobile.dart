@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/nav_items.dart';
 
@@ -24,13 +25,19 @@ class DrawerMobile extends StatelessWidget {
             ListTile(
               contentPadding: const EdgeInsets.symmetric(horizontal: 30.0),
               titleTextStyle: const TextStyle(
-                color: CustomColor.blackPrimary,
                 fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: CustomColor.blackPrimary
               ),
-              onTap: (){
-                onNavItemTap(i);
+              onTap: () {
+                if (navTitles[i] == "Bio") {
+                  launchUrl(Uri.parse('https://wzukowski.com/bio/'));
+                } else {
+                  onNavItemTap(i);
+                }
+                Navigator.of(context).pop();
               },
-              title:Text(navTitles[i])
+              title: Text(navTitles[i]),
             )
           ],
         ),

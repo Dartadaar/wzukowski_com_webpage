@@ -1,8 +1,8 @@
 import 'package:easy_web_view/easy_web_view.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/size.dart';
-import 'package:wzukowski_com/constants/sns_links.dart';
 import 'package:wzukowski_com/widgets/contact_desktop.dart';
 import 'package:wzukowski_com/widgets/contact_mobile.dart';
 import 'package:wzukowski_com/widgets/drawer_mobile.dart';
@@ -12,8 +12,6 @@ import 'package:wzukowski_com/widgets/header_mobile.dart';
 import 'package:wzukowski_com/widgets/list_of_works_desktop.dart';
 import 'package:wzukowski_com/widgets/list_of_works_mobile.dart';
 import 'package:wzukowski_com/widgets/site_logo.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
 //https://pub.dev/packages/widget_and_text_animator
 import 'package:wzukowski_com/widgets/sns.dart';
 import 'package:text_scroll/text_scroll.dart';
@@ -122,12 +120,13 @@ class _HomepageState extends State<Homepage> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text('seleced works', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary)),
+                          //const Text('BIO', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary)),
                           InkWell(
-                            onTap: (){
-                              js.context.callMethod('open', [SnsLinks.linktree]);
-                            },
-                            child: const Text('socials', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary, decoration: TextDecoration.underline, decorationColor: CustomColor.blackPrimary))
+                            onTap: () async {
+                                await launchUrl(Uri.parse('https://wzukowski.com/bio/'))
+                                .catchError((_) => throw Exception('Could not launch URL'));
+                              },
+                            child: const Text('bio', style: TextStyle(fontSize: 50, fontWeight: FontWeight.w500, color: CustomColor.blackPrimary, decoration: TextDecoration.underline, decorationColor: CustomColor.blackPrimary))
                             )
                         ],
                       ),
@@ -170,22 +169,22 @@ class _HomepageState extends State<Homepage> {
                   child: Divider(thickness: 3, height: 0, color: CustomColor.whitePrimary),
                 ),
                  // ŻukowskiMularski
-                Container(
-                  color: CustomColor.blackPrimary,
-                  width: double.maxFinite,
-                  child: Column(
-                    children: [
-                      constraints.maxWidth >= kMinDesktopWidth ? const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 70)) : const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 35)),
-                      SizedBox(
-                        height: 600,
-                        width: constraints.maxWidth/1.25,
-                        child: const EasyWebView(
-                              src: 'https://www.youtube.com/embed/q0OqUIQzKWw?si=a6GWb6Tvdordoyw7',
-                            ),
-                      ),
-                    ],
-                  )
-                ),
+                // Container(
+                //   color: CustomColor.blackPrimary,
+                //   width: double.maxFinite,
+                //   child: Column(
+                //     children: [
+                //       constraints.maxWidth >= kMinDesktopWidth ? const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 70)) : const Text('MULARSKI/ZUKOWSKI', style: TextStyle(fontSize: 35)),
+                //       SizedBox(
+                //         height: 600,
+                //         width: constraints.maxWidth/1.25,
+                //         child: const EasyWebView(
+                //               src: 'https://www.youtube.com/embed/q0OqUIQzKWw?si=a6GWb6Tvdordoyw7',
+                //             ),
+                //       ),
+                //     ],
+                //   )
+                // ),
                 //live visuals gallery
                 const Divider(thickness: 3, height: 0, color: CustomColor.whitePrimary),
                 Padding(

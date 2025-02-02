@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:wzukowski_com/constants/colors.dart';
 import 'package:wzukowski_com/constants/nav_items.dart';
 import 'package:wzukowski_com/widgets/site_logo.dart';
@@ -16,16 +17,24 @@ class HeaderDesktop extends StatelessWidget {
             child: Row(
               children: [
                 for (int i = 0; i < navTitles.length; i++)
-                  Padding(padding: const EdgeInsets.only(right: 20),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20),
                     child: TextButton(
                       onPressed: () {
-                        onNavMenuTap(i);
+                        if (navTitles[i] == "Bio") {
+                          launchUrl(Uri.parse('https://wzukowski.com/bio/'));
+                        } else {
+                          onNavMenuTap(i);
+                        }
                       },
-                      child: Text(navTitles[i], style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: CustomColor.whitePrimary
-                      ),),
+                      child: Text(
+                        navTitles[i], 
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                          color: CustomColor.whitePrimary
+                        ),
+                      ),
                     ),
                   ),
                 

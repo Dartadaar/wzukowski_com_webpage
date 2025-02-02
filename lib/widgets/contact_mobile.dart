@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart';
 import 'custom_text_field.dart';
@@ -8,10 +8,10 @@ class ContactMobile extends StatefulWidget {
   const ContactMobile({super.key});
 
   @override
-  _ContactMobileState createState() => _ContactMobileState();
+  ContactMobileState createState() => ContactMobileState();
 }
 
-class _ContactMobileState extends State<ContactMobile> {
+class ContactMobileState extends State<ContactMobile> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
@@ -59,16 +59,18 @@ class _ContactMobileState extends State<ContactMobile> {
                     width: 140,
                     height: 45,
                     child: ElevatedButton(
-                      onPressed: () {
+                        onPressed: () async {
                         final name = _nameController.text;
                         final email = _emailController.text;
                         final message = _messageController.text;
 
-                        final mailtoLink = Uri.encodeFull(
+                        final mailtoUri = Uri.parse(
                           'mailto:wl.zukowski@outlook.com?subject=Website message from $name&body=Name: $name\nEmail: $email\n\nMessage:\n$message',
                         );
 
-                        js.context.callMethod('open', [mailtoLink]);
+                        if (await canLaunchUrl(mailtoUri)) {
+                          await launchUrl(mailtoUri);
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: CustomColor.yellowPrimary,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:js' as js;
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart';
 import '../constants/works.dart';
@@ -66,13 +65,12 @@ class ListOfWorksDesktop extends StatelessWidget {
                                                   child: worksList[ii].length >=
                                                           5
                                                       ? InkWell(
-                                                          onTap: () {
-                                                            js.context
-                                                                .callMethod(
-                                                                    'open', [
-                                                              worksList[ii][4]
-                                                            ]);
-                                                          },
+                                                            onTap: () async {
+                                                            final Uri url = Uri.parse(worksList[ii][4] as String);
+                                                            if (await canLaunchUrl(url)) {
+                                                              await launchUrl(url);
+                                                            }
+                                                            },
                                                           child: Text(
                                                             '${worksList[ii][0]} for ${worksList[ii][1]}',
                                                             maxLines: 4,
