@@ -26,6 +26,7 @@ class Scroller extends StatelessWidget {
     'endsay',
     'ashling scattered over several provinces',
     'soundscapewalks'
+    'Dispute between a man and his Ba'
   ]..shuffle();
 
   // helper method
@@ -53,11 +54,11 @@ class Scroller extends StatelessWidget {
             mode: TextScrollMode.endless,
             velocity: Velocity(pixelsPerSecond: Offset(34, 0)),
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
-        TextScroll(_getScrollText(scrollWords, 12, 26),
+        TextScroll(_getScrollText(scrollWords, 3, 26),
             mode: TextScrollMode.endless,
             velocity: Velocity(pixelsPerSecond: Offset(37, 0)),
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
-        TextScroll(_getScrollText(scrollWords, 15, 34),
+        TextScroll(_getScrollText(scrollWords, 12, 34),
             mode: TextScrollMode.endless,
             velocity: Velocity(pixelsPerSecond: Offset(39, 0)),
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
