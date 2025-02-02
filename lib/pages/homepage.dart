@@ -35,7 +35,7 @@ class _HomepageState extends State<Homepage> {
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldKey,
-          backgroundColor: Colors.black,
+          backgroundColor: CustomColor.blackPrimary,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth ? null: DrawerMobile(onNavItemTap: (int navIndex){
             scaffoldKey.currentState?.closeEndDrawer();
             scrollToSection(navIndex);
@@ -65,7 +65,7 @@ class _HomepageState extends State<Homepage> {
                         scaffoldKey.currentState?.openEndDrawer();
                       },
                       ),
-                      const SizedBox(width: double.infinity, height: 40),
+                      const SizedBox(width: double.maxFinite, height: 40),
                       TextScroll('live visual artist | improviser | composer | ', mode: TextScrollMode.endless, velocity: Velocity(pixelsPerSecond: Offset(40, 0)), style: TextStyle(fontSize: 90, fontWeight: FontWeight.w500)),
                       const Spacer(),
                       Scroller(),
