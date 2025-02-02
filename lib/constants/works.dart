@@ -1,4 +1,4 @@
-var worksList = [
+const worksList = [
   ["endsay II", "va, small ensemble (fl, cl, acc, vn, vc, cb) and media", 2025, 1],
   ["endsay I", "va, 2.0 playback and media", 2024, 1],
   ["nomads II", "vn and cbas clarinet", 2024, 0],
@@ -23,4 +23,4 @@ var worksList = [
 var workTypes = ["acoustic works", "electroacoustic works", "acousmatic works"];
 
 //0-acoustic, 1-electroacustic, 2-acousmatic
-//[title, year, type, /link/]
+//[title, instrumentation, year, type, /link/]
