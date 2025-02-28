@@ -153,7 +153,7 @@ class _HomepageState extends State<Homepage> {
                 //   )
                 // ),
                 //live visuals gallery
-                const Divider(thickness: 3, height: 0, color: CustomColor.whitePrimary),
+                //const Divider(thickness: 3, height: 0, color: CustomColor.whitePrimary),
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: SizedBox(
@@ -168,19 +168,22 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Container(key: navbarKeys[2], child: constraints.maxWidth >= kMinDesktopWidth ? const ContactDesktop() : const ContactMobile()),
                 // FOOTER
-                Container(
-                  color: CustomColor.blackPrimary,
-                  width: double.maxFinite,
-                  child: const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(vertical: 40),
-                        child: SiteLogo(),
-                      ),
-                      Sns()
-                    ],
-                  )
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Container(
+                    color: CustomColor.blackPrimary,
+                    width: double.maxFinite,
+                    child: const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(vertical: 40),
+                          child: SiteLogo(),
+                        ),
+                        Sns()
+                      ],
+                    )
+                  ),
                 )
               ],
             ),
